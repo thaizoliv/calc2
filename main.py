@@ -45,8 +45,16 @@ def entrar_valores(event):
 def calcular():
 
     global todos_valores
-    resultado = eval(todos_valores)
-    valor_texto.set(str(resultado))
+
+    try:
+
+        resultado = eval(todos_valores)
+        valor_texto.set(str(resultado))
+
+    except ZeroDivisionError:
+    
+        valor_texto.set("Não divide por 0!")
+
 
 
 def limpar_tela():
